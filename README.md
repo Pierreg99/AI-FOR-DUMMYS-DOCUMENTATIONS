@@ -67,3 +67,11 @@ The German and English entry points follow the same V1.0 structure so concepts, 
 [Glossary](docs/glossary.md) · [Diagrams](docs/diagrams.md) · [Sources](docs/sources.md) · [Roadmap](ROADMAP.md)
 
 **Status:** V1.0 Foundation
+
+
+## Interactive Website
+
+- [AI for Dummies — Interactive Website](index.html)
+- [Deutsch](docs/de/README.md)
+- [English](docs/en/README.md)
+- GitHub Pages target: `https://pierreg99.github.io/AI-FOR-DUMMYS-DOCUMENTATIONS/`
