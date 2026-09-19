@@ -36,6 +36,13 @@ AGI / ASI
 
 **LLM = Modell · Agent = handelndes System · Agentic AI = Systemparadigma · AGI = allgemeine Fähigkeit · ASI = hypothetische Superintelligenz**
 
+## Documentation Languages
+
+- [Deutsch — vollständiger Einstieg](docs/de/README.md)
+- [English — full entry point](docs/en/README.md)
+
+The German and English entry points follow the same V1.0 structure so concepts, terminology, architecture patterns, formulas, evaluation guidance, security controls, and the LLM → Agent → AGI roadmap remain synchronized.
+
 ## Kapitel
 
 1. [AI Fundamentals](docs/01-ai-fundamentals.md)
