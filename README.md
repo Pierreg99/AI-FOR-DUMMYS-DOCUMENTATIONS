@@ -75,3 +75,15 @@ The German and English entry points follow the same V1.0 structure so concepts, 
 - [Deutsch](docs/de/README.md)
 - [English](docs/en/README.md)
 - GitHub Pages target: `https://pierreg99.github.io/AI-FOR-DUMMYS-DOCUMENTATIONS/`
+
+
+## Erweiterung V1.1 — Production Systems
+
+19. [Observability & Tracing](docs/19-observability.md) · [English](docs/19-observability-en.md)
+20. [Data Pipelines & Knowledge Quality](docs/20-data-pipelines.md) · [English](docs/20-data-pipelines-en.md)
+21. [Inference Serving & Runtime Economics](docs/21-inference-serving.md) · [English](docs/21-inference-serving-en.md)
+22. [Human-AI Interaction & Approval Design](docs/22-human-ai-interaction.md) · [English](docs/22-human-ai-interaction-en.md)
+23. [AI Governance, Risk & Lifecycle](docs/23-governance-risk.md) · [English](docs/23-governance-risk-en.md)
+24. [Agent Testing & Verification](docs/24-agent-testing.md) · [English](docs/24-agent-testing-en.md)
+
+**V1.1 adds:** Observability, data/knowledge quality, inference economics, human approval design, governance, and agent verification.
