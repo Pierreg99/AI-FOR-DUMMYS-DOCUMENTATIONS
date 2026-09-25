@@ -262,3 +262,17 @@ Alle neuen Kapitel sollten:
 5. Metriken und Failure Modes benennen,
 6. technische Grenzen dokumentieren,
 7. Quellen oder Referenzen angeben.
+
+
+## 12. Erweiterung V1.1 — Production Systems
+
+| Nr. | Thema | Fokus |
+|---|---|---|
+| 19 | Observability & Tracing | Logs, Metrics, Traces und Datenschutz |
+| 20 | Data Pipelines & Knowledge Quality | Datenqualität, Provenienz und Drift |
+| 21 | Inference Serving & Runtime Economics | Serving, Latenz, Throughput und Kosten |
+| 22 | Human-AI Interaction | Approval Gates und Kontrollstufen |
+| 23 | Governance, Risk & Lifecycle | Risiko, Change Management und Incidents |
+| 24 | Agent Testing & Verification | Unit-, Contract-, Scenario- und Reliability-Tests |
+
+Die sechs Erweiterungskapitel führen die V1.0 von der konzeptionellen Grundlage in Richtung produktionsnaher Systementwicklung.
