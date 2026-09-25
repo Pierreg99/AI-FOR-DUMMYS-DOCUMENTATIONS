@@ -262,3 +262,17 @@ Every new chapter should:
 5. name metrics and failure modes,
 6. document technical limits,
 7. provide sources or references.
+
+
+## 12. V1.1 Expansion — Production Systems
+
+| No. | Topic | Focus |
+|---|---|---|
+| 19 | Observability & Tracing | Logs, metrics, traces, and privacy |
+| 20 | Data Pipelines & Knowledge Quality | Data quality, provenance, and drift |
+| 21 | Inference Serving & Runtime Economics | Serving, latency, throughput, and cost |
+| 22 | Human-AI Interaction | Approval gates and control levels |
+| 23 | Governance, Risk & Lifecycle | Risk, change management, and incidents |
+| 24 | Agent Testing & Verification | Unit, contract, scenario, and reliability tests |
+
+The six expansion chapters move V1.0 from conceptual foundations toward production-oriented system engineering.
