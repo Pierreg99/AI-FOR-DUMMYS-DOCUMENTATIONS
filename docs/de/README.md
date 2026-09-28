@@ -276,3 +276,10 @@ Alle neuen Kapitel sollten:
 | 24 | Agent Testing & Verification | Unit-, Contract-, Scenario- und Reliability-Tests |
 
 Die sechs Erweiterungskapitel führen die V1.0 von der konzeptionellen Grundlage in Richtung produktionsnaher Systementwicklung.
+
+
+## V1.2 — Deutsche Fachedition
+
+[INDEX-V1.2 öffnen](INDEX-V1.2.md)
+
+Die Advanced-System-Kapitel 25–36 werden zusätzlich sprachrein unter `docs/de/` gepflegt.
