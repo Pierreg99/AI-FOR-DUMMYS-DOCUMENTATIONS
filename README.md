@@ -87,3 +87,12 @@ The German and English entry points follow the same V1.0 structure so concepts, 
 24. [Agent Testing & Verification](docs/24-agent-testing.md) · [English](docs/24-agent-testing-en.md)
 
 **V1.1 adds:** Observability, data/knowledge quality, inference economics, human approval design, governance, and agent verification.
+
+
+## V1.2 — German / English split
+
+- [Deutsche Fachedition V1.2](docs/de/INDEX-V1.2.md)
+- [English Technical Edition V1.2](docs/en/INDEX-V1.2.md)
+- [Language Architecture](docs/language-map.md)
+
+Chapters 29–36 expand Context Engineering, Tool Security, Event Orchestration, Retrieval, Multimodality, Evaluation Science, Privacy Engineering, and AI Product Economics.
