@@ -276,3 +276,10 @@ Every new chapter should:
 | 24 | Agent Testing & Verification | Unit, contract, scenario, and reliability tests |
 
 The six expansion chapters move V1.0 from conceptual foundations toward production-oriented system engineering.
+
+
+## V1.2 — English Technical Edition
+
+[Open INDEX-V1.2](INDEX-V1.2.md)
+
+Advanced System chapters 25–36 are additionally maintained as language-specific files under `docs/en/`.
