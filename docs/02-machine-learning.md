@@ -1,17 +1,5 @@
-# Kapitel 2 — Machine Learning & Deep Learning
+# 02 — Kapitel verschoben
 
-## Machine Learning
-ML lernt Muster oder Entscheidungsfunktionen aus Daten.
+[Deutsch](de/02-machine-learning.md) · [English](en/02-machine-learning.md)
 
-```text
-Data → Training → Parameters → Model → Prediction
-```
-
-## Lernparadigmen
-Supervised Learning, Unsupervised Learning, Self-Supervised Learning und Reinforcement Learning sind unterschiedliche Trainingsparadigmen.
-
-## Generalisierung
-Ein Modell soll nicht nur Trainingsdaten memorieren, sondern auf unbekannte Daten generalisieren.
-
-## Referenz
-- Goodfellow et al., Deep Learning: https://www.deeplearningbook.org/
+Die aktuelle Fassung enthält Beispiele, Übungen und Quellen.

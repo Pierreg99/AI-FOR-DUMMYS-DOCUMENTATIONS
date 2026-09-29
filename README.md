@@ -1,98 +1,31 @@
-# AI for Dummies — Documentation
+# AI for Everyone — learn, build, and question AI
 
-Ein praxisorientiertes Lehrbuch zur modernen KI: von klassischer KI und Machine Learning über LLMs und RAG bis zu AI Agents, Agentic AI, Multi-Agent Systems und den Konzepten AGI/ASI.
+**An open learning guide in English and German.** Explore 36 matched chapters, from machine learning and language models to RAG, agents, security, evaluation, and production engineering. Every chapter includes a worked example, a failure mode, an exercise with an answer, and links to primary reading.
 
-## Inhalt
+[Open the English learning site](https://pierreg99.github.io/AI-FOR-Everyone-Learn-Docs/en/) · [Deutsch lesen](README.de.md) · [Deutsche Website öffnen](https://pierreg99.github.io/AI-FOR-Everyone-Learn-Docs/de/)
 
-- 18 Lehrbuchkapitel
-- Architekturdiagramme
-- Formeln und quantitative Modelle
-- Agent-Patterns
-- Memory-Architekturen
-- Multi-Agent-Kommunikationsmuster
-- Evaluation und Reliability
-- Security & Safety
-- technische Roadmap: LLM → Agent → AGI
+The website works as a static GitHub Pages site. It has no account, analytics service, external font dependency, or runtime API. Reading progress and bookmarks stay in the current browser. All chapters and navigation remain readable when JavaScript is disabled; search, interactive tools, and saved progress require JavaScript.
 
-## Kernmodell
+## Find your starting point
 
-```text
-AI / KI
-├── Machine Learning
-│   └── Deep Learning
-│       └── Transformers
-│           ├── LLMs
-│           └── Multimodal Foundation Models
-└── Agentic Systems
-    ├── Workflows
-    ├── Agents
-    └── Multi-Agent Systems
+- **Understand AI:** chapters 1–6 cover models, learning, Transformers, language models, generative AI, and RAG.
+- **Build agents:** chapters 7–9, 14–15, 17, 24, 27, and 29–30 connect tools, context, permissions, runtime design, and tests.
+- **Operate systems:** chapters 19–23, 25–26, 31–32, and 34–36 address observability, data, serving, recovery, evaluation, privacy, and costs.
 
-AGI / ASI
-= Fähigkeits- und Zielkonzepte, keine einzelne Modellarchitektur
+The other chapters deepen architectures and research boundaries. AGI and ASI are capability and hypothetical future concepts; they are not guaranteed engineering milestones.
+
+[English chapter index](docs/en/README.md) · [German chapter index](docs/de/README.md) · [Quick start](docs/en/getting-started.md) · [Glossary](docs/en/glossary.md) · [Sources](docs/en/sources.md) · [Practice projects](docs/en/projects.md)
+
+## Run the website locally
+
+Node.js 22+ and npm are required for the build. Python 3.10+ is required only for the optional examples.
+
+```sh
+npm ci
+npm run check
+npm run dev
 ```
 
-## Merksatz
+Open `http://127.0.0.1:4173/`. The `dist/` folder contains the complete deployable site; no Node.js process is needed on GitHub Pages. After editing a chapter, run `npm run build` again. Browser tests can be run with `npx playwright install chromium && npm run test:e2e` where browser downloads are available.
 
-**LLM = Modell · Agent = handelndes System · Agentic AI = Systemparadigma · AGI = allgemeine Fähigkeit · ASI = hypothetische Superintelligenz**
-
-## Documentation Languages
-
-- [Deutsch — vollständiger Einstieg](docs/de/README.md)
-- [English — full entry point](docs/en/README.md)
-
-The German and English entry points follow the same V1.0 structure so concepts, terminology, architecture patterns, formulas, evaluation guidance, security controls, and the LLM → Agent → AGI roadmap remain synchronized.
-
-## Kapitel
-
-1. [AI Fundamentals](docs/01-ai-fundamentals.md)
-2. [Machine Learning & Deep Learning](docs/02-machine-learning.md)
-3. [Transformers & Foundation Models](docs/03-transformers-foundation-models.md)
-4. [Large Language Models](docs/04-llms.md)
-5. [Generative AI](docs/05-generative-ai.md)
-6. [RAG & Knowledge Systems](docs/06-rag.md)
-7. [AI Agents](docs/07-ai-agents.md)
-8. [Agentic AI & Workflows](docs/08-agentic-ai.md)
-9. [Memory, Tools & Context Engineering](docs/09-memory-tools-context.md)
-10. [Multi-Agent Systems](docs/10-multi-agent-systems.md)
-11. [Autonomy, Evaluation & Reliability](docs/11-autonomy-evaluation.md)
-12. [Artificial General Intelligence](docs/12-agi.md)
-13. [ASI & Future Concepts](docs/13-asi.md)
-14. [Security & Safety](docs/14-security-safety.md)
-15. [Architecture Patterns](docs/15-architecture-patterns.md)
-16. [Formulas & Quantitative Models](docs/16-formulas.md)
-17. [LLM → Agent Runtime](docs/17-practice-llm-to-runtime.md)
-18. [LLM → Agent → AGI Roadmap](docs/18-roadmap-llm-agent-agi.md)
-
-[Glossary](docs/glossary.md) · [Diagrams](docs/diagrams.md) · [Sources](docs/sources.md) · [Roadmap](ROADMAP.md)
-
-**Status:** V1.0 Foundation
-
-
-## Interactive Website
-
-- [AI for Dummies — Interactive Website](index.html)
-- [Deutsch](docs/de/README.md)
-- [English](docs/en/README.md)
-- GitHub Pages target: `https://pierreg99.github.io/AI-FOR-DUMMYS-DOCUMENTATIONS/`
-
-
-## Erweiterung V1.1 — Production Systems
-
-19. [Observability & Tracing](docs/19-observability.md) · [English](docs/19-observability-en.md)
-20. [Data Pipelines & Knowledge Quality](docs/20-data-pipelines.md) · [English](docs/20-data-pipelines-en.md)
-21. [Inference Serving & Runtime Economics](docs/21-inference-serving.md) · [English](docs/21-inference-serving-en.md)
-22. [Human-AI Interaction & Approval Design](docs/22-human-ai-interaction.md) · [English](docs/22-human-ai-interaction-en.md)
-23. [AI Governance, Risk & Lifecycle](docs/23-governance-risk.md) · [English](docs/23-governance-risk-en.md)
-24. [Agent Testing & Verification](docs/24-agent-testing.md) · [English](docs/24-agent-testing-en.md)
-
-**V1.1 adds:** Observability, data/knowledge quality, inference economics, human approval design, governance, and agent verification.
-
-
-## V1.2 — German / English split
-
-- [Deutsche Fachedition V1.2](docs/de/INDEX-V1.2.md)
-- [English Technical Edition V1.2](docs/en/INDEX-V1.2.md)
-- [Language Architecture](docs/language-map.md)
-
-Chapters 29–36 expand Context Engineering, Tool Security, Event Orchestration, Retrieval, Multimodality, Evaluation Science, Privacy Engineering, and AI Product Economics.
+See [WEBSITE.md](WEBSITE.md) for the file layout and deployment, [CONTRIBUTING.md](CONTRIBUTING.md) for editing guidelines, and [ROADMAP.md](ROADMAP.md) for completed work and open opportunities. Previous V1.2 entry points and chapter URLs remain as pointers to the current editions.

@@ -1,22 +1,5 @@
-# Kapitel 8 — Agentic AI & Workflows
+# 08 — Kapitel verschoben
 
-## Workflow
-Ein Workflow hat einen überwiegend vorab definierten Kontrollpfad.
+[Deutsch](de/08-agentic-ai.md) · [English](en/08-agentic-ai.md)
 
-```text
-A → LLM → B → LLM → C
-```
-
-## Agent
-Beim Agenten werden nächste Schritte dynamisch aufgrund des Ziels, Zustands und Beobachtungen gewählt.
-
-```text
-Goal → Decision → Tool → Observation → Next Decision
-```
-
-## Agentic Workflow
-Hybrides Muster: deterministische Orchestrierung kombiniert mit modellgesteuerten Entscheidungen.
-
-## Referenzen
-- Anthropic, Building Effective Agents: https://www.anthropic.com/engineering/building-effective-agents
-- Google Cloud, Agentic AI: https://cloud.google.com/discover/what-is-agentic-ai
+Die aktuelle Fassung enthält Beispiele, Übungen und Quellen.

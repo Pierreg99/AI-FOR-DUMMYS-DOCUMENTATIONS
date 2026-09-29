@@ -1,36 +1,5 @@
-# 20 — Data Pipelines & Knowledge Quality
+# 20 — Kapitel verschoben
 
-## Warum Datenqualität Systemqualität bestimmt
+[Deutsch](de/20-data-pipelines.md) · [English](en/20-data-pipelines.md)
 
-RAG, Fine-Tuning und Evaluation hängen von Daten ab. Ein fehlerhafter Datenbestand kann ein technisch korrektes Retrieval-System unzuverlässig machen.
-
-## Pipeline
-
-```text
-Source
- → Ingestion
- → Validation
- → Normalization
- → Chunking
- → Index
- → Retrieval
- → Evaluation
-```
-
-## Qualitätskontrollen
-
-- Schema- und Formatprüfung
-- Duplikaterkennung
-- Aktualitätsprüfung
-- Provenienz
-- Zugriffskontrolle
-- Sampling und manuelle Review
-- Drift Detection
-
-## Provenienz
-
-Jeder wichtige Wissenseintrag sollte auf seine Quelle und seinen Erfassungszeitpunkt zurückgeführt werden können.
-
-## Failure Modes
-
-Besonders relevant sind stale documents, falsche Zugriffsrechte, beschädigte Parser-Ausgaben, Duplikate und widersprüchliche Quellen.
+Die aktuelle Fassung enthält Beispiele, Übungen und Quellen.

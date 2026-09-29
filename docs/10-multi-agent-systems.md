@@ -1,21 +1,5 @@
-# Kapitel 10 — Multi-Agent Systems
+# 10 — Kapitel verschoben
 
-## Grundarchitektur
-```text
-                 Coordinator
-             ┌──────┼──────┐
-             ↓      ↓      ↓
-         Research  Code     QA
-             └──────┼──────┘
-                    ↓
-                 Reviewer
-```
+[Deutsch](de/10-multi-agent-systems.md) · [English](en/10-multi-agent-systems.md)
 
-## Kommunikationsmuster
-1. Sequential delegation: A → B → C
-2. Fan-out/fan-in: A → {B,C,D} → A
-3. Blackboard: gemeinsamer Zustand
-4. Negotiation: Vorschläge und Entscheidungen zwischen Agenten
-
-## Risiken
-Koordinationskosten, widersprüchliche Zustände, Race Conditions, Fehlerpropagation und höhere Latenz.
+Die aktuelle Fassung enthält Beispiele, Übungen und Quellen.

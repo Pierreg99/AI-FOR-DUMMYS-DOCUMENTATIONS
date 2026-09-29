@@ -1,15 +1,7 @@
-# Language Architecture
+# Language architecture
 
-~~~text
-docs/
-├── de/  → Deutsche Fachedition
-└── en/  → English Technical Edition
-~~~
+Every numbered chapter has its canonical German Markdown source at `docs/de/{slug}.md` and its canonical English source at `docs/en/{slug}.md`. The ordered metadata lives in `data/chapters.json`. Both editions share chapter numbers, technical coverage, examples, exercises, limits, and references. Localized titles and summaries are read directly from the Markdown. German and English index, quick-start, glossary, sources, and projects pages follow the same directory structure.
 
-## Policy
+Legacy root Markdown files and the original first 24 chapters in `docs/` point to the canonical locations; these links are deliberately preserved. The V1.2 index files point to the current full indexes. New links should target the canonical editions.
 
-New chapters from the V1.2 advanced track are maintained as genuine language-specific files. Root files remain compatibility entry points.
-
-## Parity
-
-DE and EN must preserve chapter numbering, technical scope, architecture semantics, metrics, and failure-mode coverage. Language adaptation may change phrasing but not technical meaning.
+The build outputs HTML in `dist/docs/de/` and `dist/docs/en/`, with stable translation links between matched chapters. The site has no runtime translation service. A content check verifies all pairs, structural sections, and local links.
