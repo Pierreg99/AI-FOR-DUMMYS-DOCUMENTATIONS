@@ -265,3 +265,65 @@ test('reading focus and shared filter URLs work in both languages', async ({
     ),
   ).toBe(true);
 });
+
+test('learning path progress and completed journey guide the next action', async ({
+  page,
+}) => {
+  await page.addInitScript(() =>
+    localStorage.setItem(
+      'afe-learning-v2',
+      JSON.stringify({ version: 2, completed: [1, 2], bookmarks: [], last: 2 }),
+    ),
+  );
+  await page.goto('de/index.html');
+  await expect(page.locator('[data-path-count="0"]')).toHaveText('2 / 6');
+  await expect(page.locator('.chapter-card[data-id="1"]')).toHaveClass(
+    /is-complete/,
+  );
+  await page.evaluate(() =>
+    localStorage.setItem(
+      'afe-learning-v2',
+      JSON.stringify({
+        version: 2,
+        completed: Array.from({ length: 36 }, (_, i) => i + 1),
+        bookmarks: [],
+        last: 36,
+      }),
+    ),
+  );
+  // The state event simulates another tab without replacing the test's startup script.
+  await page.evaluate(() =>
+    dispatchEvent(
+      new StorageEvent('storage', {
+        key: 'afe-learning-v2',
+        newValue: localStorage.getItem('afe-learning-v2'),
+      }),
+    ),
+  );
+  await expect(page.locator('[data-next-title]')).toHaveText(
+    'Alle 36 Kapitel abgeschlossen',
+  );
+  await expect(page.locator('.learning-hub [data-resume]')).toHaveAttribute(
+    'href',
+    /projects.html$/,
+  );
+});
+test('mobile contents exposes working section links and reader dock state', async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto('docs/en/16-formulas.html');
+  if (isMobile) {
+    await expect(page.locator('.mobile-dock a[aria-current]')).toHaveText(
+      'All chapters',
+    );
+    await page.locator('.mobile-contents summary').click();
+    const link = page.locator('.mobile-contents a').nth(1);
+    const href = await link.getAttribute('href');
+    await link.click();
+    await expect(page).toHaveURL(new RegExp(href + '$'));
+  } else {
+    await page.locator('.toc a').nth(1).click();
+    await expect(page.locator('.toc a[aria-current]')).toHaveCount(1);
+  }
+});

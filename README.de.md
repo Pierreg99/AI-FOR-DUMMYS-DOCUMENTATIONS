@@ -34,3 +34,7 @@ npm run dev
 Öffne `http://127.0.0.1:4173/`. Der Ordner `dist/` enthält die komplette Website für GitHub Pages. Nach einer Kapiteländerung muss `npm run build` erneut ausgeführt werden. Browsertests laufen mit `npx playwright install chromium && npm run test:e2e`, sofern ein Browser-Download verfügbar ist.
 
 [WEBSITE.md](WEBSITE.md) beschreibt Dateien und Deployment, [CONTRIBUTING.de.md](CONTRIBUTING.de.md) das Mitwirken und [ROADMAP.md](ROADMAP.md) abgeschlossene sowie mögliche nächste Schritte. Frühere V1.2-Einstiege und Kapitel-Adressen verweisen auf die aktuellen Ausgaben.
+
+### Ausgabe 2.2: bessere Orientierung beim Lernen
+
+Lernpfade zeigen den eigenen Fortschritt, abgeschlossene Kapitel sind sichtbar markiert und nach dem letzten Kapitel geht es zu Praxisprojekten. Auf Smartphone und Tablet gibt es eine aufklappbare Kapitelübersicht; am Desktop wird der aktuelle Abschnitt hervorgehoben. Nach der Veröffentlichung prüft der Workflow die tatsächlich erreichbaren deutschen und englischen Seiten.

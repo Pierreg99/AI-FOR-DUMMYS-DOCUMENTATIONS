@@ -34,3 +34,7 @@ npm run dev
 Open `http://127.0.0.1:4173/`. The `dist/` folder contains the complete deployable site; no Node.js process is needed on GitHub Pages. After editing a chapter, run `npm run build` again. Browser tests can be run with `npx playwright install chromium && npm run test:e2e` where browser downloads are available.
 
 See [WEBSITE.md](WEBSITE.md) for the file layout and deployment, [CONTRIBUTING.md](CONTRIBUTING.md) for editing guidelines, and [ROADMAP.md](ROADMAP.md) for completed work and open opportunities. Previous V1.2 entry points and chapter URLs remain as pointers to the current editions.
+
+### Edition 2.2: clearer learning navigation
+
+Learning paths show individual progress, finished chapters have a visible state, and completing the guide points to practice projects. A collapsible chapter outline is available on phones and tablets; desktop outlines highlight the current section. Deployment checks now verify the actual public German and English pages after publication.

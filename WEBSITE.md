@@ -22,3 +22,9 @@ The Pages workflow runs formatting, build, content, example, desktop/mobile brow
 ## Interface maintenance
 
 Run `npm run format` after editing frontend code. Both languages use `scripts/i18n.mjs`; keep paired labels there. Progress backups use an explicit schema and a 32 KiB limit. Imports validate all chapter IDs before merging, and never upload a file. Focus mode and the reading position indicator are optional enhancements.
+
+## Deployment troubleshooting
+
+Select **Settings → Pages → Build and deployment → Source → GitHub Actions**. Do not select a branch or `/docs`: those contain source Markdown and the unrendered template. A competing Jekyll deployment can replace the generated site even when the custom workflow succeeded.
+
+The Pages workflow separates read-only build/test jobs from publication permissions and tests under the repository subpath. After publishing, `npm run verify:deployment` checks the root, both language homepages, sample chapter routes, assets and release marker. For another host, set `SITE_URL` to its base URL, including its trailing slash.
