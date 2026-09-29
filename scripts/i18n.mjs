@@ -1,6 +1,13 @@
 export const languages = ['de', 'en'];
 export const copy = {
   de: {
+    pathProgress: 'Dein Fortschritt im Lernpfad',
+    finishedTitle: 'Alle 36 Kapitel abgeschlossen',
+    finishedLead:
+      'Vertiefe dein Wissen mit einem Praxisprojekt oder wiederhole deine Lesezeichen.',
+    practice: 'Praxisprojekt starten',
+    mobileContents: 'In diesem Kapitel',
+    backTop: 'Nach oben',
     brandTagline: 'WISSEN FÜR DEINEN NÄCHSTEN SCHRITT',
     journey: 'DEIN NÄCHSTES KAPITEL',
     journeyLead: 'Ein Thema nach dem anderen. In deinem Tempo.',
@@ -158,11 +165,18 @@ export const copy = {
     noScript:
       'Alle Kapitel bleiben ohne JavaScript lesbar. Suche, Lesezeichen und das interaktive Lab benötigen JavaScript.',
     reference: 'REFERENZ',
-    updated: 'Ausgabe 2.1',
+    updated: 'Ausgabe 2.2',
     notFound: 'Diese Seite wurde nicht gefunden.',
     notFoundLead: 'Starte in der Bibliothek und finde dein nächstes Thema.',
   },
   en: {
+    pathProgress: 'Your learning path progress',
+    finishedTitle: 'All 36 chapters completed',
+    finishedLead:
+      'Put your knowledge into practice with a project or revisit your bookmarks.',
+    practice: 'Start a practice project',
+    mobileContents: 'In this chapter',
+    backTop: 'Back to top',
     brandTagline: 'KNOWLEDGE FOR YOUR NEXT STEP',
     journey: 'YOUR NEXT CHAPTER',
     journeyLead: 'One topic at a time. At your own pace.',
@@ -317,7 +331,7 @@ export const copy = {
     noScript:
       'Every chapter remains readable without JavaScript. Search, bookmarks, and the interactive lab require JavaScript.',
     reference: 'REFERENCE',
-    updated: 'Edition 2.1',
+    updated: 'Edition 2.2',
     notFound: 'This page could not be found.',
     notFoundLead: 'Start in the library and find your next topic.',
   },

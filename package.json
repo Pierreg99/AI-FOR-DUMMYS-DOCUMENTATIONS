@@ -1,6 +1,6 @@
 {
   "name": "ai-for-everyone-learn-docs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
   "type": "module",
   "description": "A bilingual, accessible field guide to AI systems.",
@@ -15,7 +15,8 @@
     "test:e2e": "playwright test",
     "check": "npm run format:check && npm run build && npm test",
     "format": "prettier --write \"assets/*.{js,css}\" \"scripts/*.mjs\" \"tests/**/*.mjs\" \"data/*.json\" index.html package.json playwright.config.mjs",
-    "format:check": "prettier --check \"assets/*.{js,css}\" \"scripts/*.mjs\" \"tests/**/*.mjs\" \"data/*.json\" index.html package.json playwright.config.mjs"
+    "format:check": "prettier --check \"assets/*.{js,css}\" \"scripts/*.mjs\" \"tests/**/*.mjs\" \"data/*.json\" index.html package.json playwright.config.mjs",
+    "verify:deployment": "node scripts/verify-deployment.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.1",

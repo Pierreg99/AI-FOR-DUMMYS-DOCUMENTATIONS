@@ -28,6 +28,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const template = readFileSync(path.join(root, 'index.html'), 'utf8');
 const chapters = loadCatalog(root);
+const { version } = JSON.parse(
+  readFileSync(path.join(root, 'package.json'), 'utf8'),
+);
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 const urls = [];
@@ -56,6 +59,7 @@ function frame(lang, prefix, body, options) {
     })),
   };
   const values = {
+    version,
     lang,
     root: prefix,
     body,

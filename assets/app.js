@@ -45,20 +45,46 @@ function updateProgress() {
     (n) =>
       (n.textContent = `${Math.round((state.completed.length / ids.length) * 100)}%`),
   );
+  const finished = state.completed.length === ids.length;
+  $$('[data-path-progress]').forEach((node) => {
+    const path = paths[Number(node.dataset.pathProgress)];
+    node.value = path.filter((id) => state.completed.includes(id)).length;
+  });
+  $$('[data-path-count]').forEach((node) => {
+    const path = paths[Number(node.dataset.pathCount)];
+    node.textContent = `${path.filter((id) => state.completed.includes(id)).length} / ${path.length}`;
+  });
+  $$('.chapter-card').forEach((node) =>
+    node.classList.toggle(
+      'is-complete',
+      state.completed.includes(Number(node.dataset.id)),
+    ),
+  );
+  $$('[data-journey-lead]').forEach(
+    (node) => (node.textContent = finished ? t.finishedLead : t.journeyLead),
+  );
   const resume =
     (state.last && !state.completed.includes(state.last) ? state.last : null) ||
     ids.find((id) => !state.completed.includes(id)) ||
     1;
   $$('[data-next-title]').forEach(
-    (n) => (n.textContent = chapters.find((c) => c.id === resume).title),
+    (n) =>
+      (n.textContent = finished
+        ? t.finishedTitle
+        : chapters.find((c) => c.id === resume).title),
   );
   $$('[data-bookmark-count]').forEach(
     (n) => (n.textContent = state.bookmarks.length),
   );
-  $$('[data-resume]').forEach(
-    (n) =>
-      (n.href = `${data.root}docs/${lang}/${chapters.find((c) => c.id === resume).slug}.html`),
-  );
+  $$('[data-resume]').forEach((n) => {
+    n.href = finished
+      ? `${data.root}docs/${lang}/projects.html`
+      : `${data.root}docs/${lang}/${chapters.find((c) => c.id === resume).slug}.html`;
+    const label = [...n.childNodes].find(
+      (child) => child.nodeType === Node.TEXT_NODE,
+    );
+    if (label) label.textContent = `${finished ? t.practice : t.resume} `;
+  });
   $$('[data-bookmark]').forEach((button) => {
     const id = Number(button.dataset.bookmark),
       active = state.bookmarks.includes(id),
@@ -108,10 +134,10 @@ $$('[data-complete]').forEach((button) =>
 $$('[data-reset]').forEach((button) =>
   button.addEventListener('click', () => {
     state = cleanState(null, ids);
-    save();
+    const persisted = save();
     updateProgress();
     refreshLibrary();
-    announce(t.resetDone);
+    if (persisted) announce(t.resetDone);
   }),
 );
 const current = Number(document.body.dataset.chapter);
@@ -522,4 +548,59 @@ if (readingProgress) {
   );
   addEventListener('resize', update);
   update();
+}
+
+// Keep navigation state aligned with the visible section and filtered library.
+function updateDock() {
+  const hash = location.hash;
+  const section =
+    new URLSearchParams(location.search).get('bookmarks') === '1'
+      ? 'bookmarks'
+      : hash === '#lab'
+        ? 'lab'
+        : hash === '#library' || document.body.dataset.page === 'chapter'
+          ? 'library'
+          : 'overview';
+  $$('.mobile-dock a').forEach((link, index) => {
+    const active =
+      ['overview', 'library', 'bookmarks', 'lab'][index] === section;
+    if (active) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
+addEventListener('hashchange', updateDock);
+updateDock();
+const tocLinks = $$('.toc a');
+const sectionHeadings = tocLinks
+  .map((link) =>
+    document.getElementById(decodeURIComponent(link.hash.slice(1))),
+  )
+  .filter(Boolean);
+function updateToc() {
+  let current = sectionHeadings[0];
+  for (const heading of sectionHeadings) {
+    if (heading.getBoundingClientRect().top <= 160) current = heading;
+  }
+  tocLinks.forEach((link) => {
+    if (current && decodeURIComponent(link.hash.slice(1)) === current.id)
+      link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
+if (sectionHeadings.length) {
+  let pending = false;
+  addEventListener(
+    'scroll',
+    () => {
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(() => {
+          updateToc();
+          pending = false;
+        });
+      }
+    },
+    { passive: true },
+  );
+  updateToc();
 }

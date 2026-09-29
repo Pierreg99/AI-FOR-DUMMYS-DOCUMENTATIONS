@@ -3653,3 +3653,108 @@ select {
     font-size: 10pt;
   }
 }
+
+/* Learning navigation: progress stays visible without adding visual noise. */
+.js .button.js-only {
+  display: inline-flex !important;
+}
+.path-progress {
+  margin: 22px 0 8px;
+}
+.path-progress > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.path-progress strong {
+  color: var(--ink);
+  white-space: nowrap;
+}
+.path-progress progress {
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+}
+.chapter-card.is-complete {
+  border-color: var(--accent);
+}
+.chapter-card.is-complete .chapter-number {
+  background: var(--accent);
+  color: var(--surface);
+}
+.mobile-dock a[aria-current] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 14px;
+}
+.toc a[aria-current] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+  border-radius: 0 8px 8px 0;
+  font-weight: 700;
+}
+.mobile-contents {
+  display: none;
+}
+.article-end {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 1100px) {
+  .mobile-contents {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--glass);
+    margin: 22px 0;
+    padding: 0 20px;
+  }
+  .mobile-contents summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 0;
+    cursor: pointer;
+    font-weight: 650;
+  }
+  .mobile-contents summary::after {
+    content: '+';
+    margin-left: auto;
+    font-size: 22px;
+  }
+  .mobile-contents[open] summary::after {
+    content: '−';
+  }
+  .mobile-contents nav {
+    display: grid;
+    gap: 4px;
+    padding-bottom: 15px;
+  }
+  .mobile-contents a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .mobile-contents a:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .reader-layout > .toc {
+    display: none;
+  }
+}
+@media print {
+  .mobile-contents,
+  .back-top {
+    display: none !important;
+  }
+}
