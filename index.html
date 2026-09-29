@@ -1,31 +1,32 @@
 <!doctype html>
 <html lang="{{lang}}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="{{description}}">
-  <meta name="theme-color" content="#f5f6f2">
-  <meta property="og:title" content="{{title}}">
-  <meta property="og:description" content="{{description}}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{canonical}}">
-  <meta property="og:site_name" content="AI for Everyone">
-  <title>{{title}}</title>
-  <link rel="canonical" href="{{canonical}}">
-  {{alternates}}
-  <link rel="icon" href="{{root}}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{{root}}assets/style.css">
-  <script src="{{root}}assets/theme.js"></script>
-  <script type="module" src="{{root}}assets/app.js"></script>
-</head>
-<body data-page="{{page}}" data-chapter="{{chapter}}">
-  <a class="skip-link" href="#main">{{skip}}</a>
-  {{header}}
-  {{sidebar}}
-  <main id="main" tabindex="-1">{{body}}</main>
-  {{footer}}
-  <p class="toast" id="status-message" role="status" aria-live="polite"></p>
-  <script type="application/json" id="site-data">{{data}}</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="{{description}}" />
+    <meta name="theme-color" content="#f5f6f2" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{canonical}}" />
+    <meta property="og:site_name" content="AI for Everyone" />
+    <title>{{title}}</title>
+    <link rel="canonical" href="{{canonical}}" />
+    {{alternates}}
+    <link rel="icon" href="{{root}}assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="{{root}}assets/style.css" />
+    <script src="{{root}}assets/theme.js"></script>
+    <script type="module" src="{{root}}assets/app.js"></script>
+  </head>
+  <body data-page="{{page}}" data-chapter="{{chapter}}">
+    <a class="skip-link" href="#main">{{skip}}</a>
+    {{header}} {{sidebar}}
+    <main id="main" tabindex="-1">{{body}}</main>
+    {{footer}}
+    <p class="toast" id="status-message" role="status" aria-live="polite"></p>
+    <script type="application/json" id="site-data">
+      {{data}}
+    </script>
+  </body>
 </html>

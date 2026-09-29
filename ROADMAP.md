@@ -9,11 +9,16 @@
 - Four bilingual reference pages and three locally runnable exercises.
 - Automated build, source/link checks, browser interaction and accessibility tests, and GitHub Pages deployment from generated output.
 
+## Completed in edition 2.1
+
+- Refreshed German and English interface, larger typography, mobile dock and personal next chapter.
+- Reading focus, reading position indicator and validated local progress export/import.
+- Consistent code formatting and browser checks before deployment.
+
 ## Ideas to evaluate next
 
 - Invite readers to identify the hardest concepts and improve those exercises first.
 - Add deeper, independently reviewed case studies using reproducible data.
-- Consider export/import of local progress if readers need to switch devices; keep it opt-in and privacy preserving.
 - Measure which additional diagrams or interactive simulations genuinely improve comprehension.
 
 These are possible improvements, not a release commitment. Propose changes with a concrete learning objective and a way to check whether they help.

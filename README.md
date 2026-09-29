@@ -6,6 +6,11 @@
 
 The website works as a static GitHub Pages site. It has no account, analytics service, external font dependency, or runtime API. Reading progress and bookmarks stay in the current browser. All chapters and navigation remain readable when JavaScript is disabled; search, interactive tools, and saved progress require JavaScript.
 
+## Edition 2.1
+
+A refreshed interface adds larger type, responsive navigation, a personal next-chapter panel, and a focused reading view (shortcut `F`). Export your progress as a JSON backup and import it on another browser: valid backups merge completed chapters and bookmarks without removing existing entries. Files are processed locally. German and English share the same progress.
+
+
 ## Find your starting point
 
 - **Understand AI:** chapters 1–6 cover models, learning, Transformers, language models, generative AI, and RAG.
