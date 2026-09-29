@@ -6,6 +6,11 @@
 
 Die Website wird statisch auf GitHub Pages bereitgestellt. Sie braucht weder Konto noch Analyse-Dienst, externe Schriftart oder Laufzeit-API. Fortschritt und Lesezeichen bleiben im aktuellen Browser. Alle Kapitel sind auch ohne JavaScript lesbar; Suche, interaktive Werkzeuge und gespeicherter Fortschritt benötigen JavaScript.
 
+## Ausgabe 2.1
+
+Die überarbeitete Oberfläche bietet größere Schrift, mobile Navigation, einen persönlichen nächsten Lernschritt und einen Lesefokus (Taste `F`). Exportiere deinen Fortschritt als JSON-Datei und importiere ihn in einem anderen Browser: gültige Sicherungen ergänzen abgeschlossene Kapitel und Lesezeichen, ohne vorhandene Einträge zu entfernen. Die Dateien werden lokal verarbeitet. Deutsch und Englisch teilen denselben Lernstand.
+
+
 ## Dein Einstieg
 
 - **KI verstehen:** Kapitel 1–6 erklären Modelle, Lernen, Transformer, Sprachmodelle, generative KI und RAG.

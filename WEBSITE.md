@@ -17,4 +17,8 @@ npm run test:e2e
 
 `npm run check` builds and verifies language coverage, source links, generated routes, anchors, renderer safety, calculations, and runnable examples. Browser tests cover mobile and desktop navigation, language switching, persistence, no-JavaScript reading, calculations, and automated accessibility checks. Run `npm run dev` for a local preview on `127.0.0.1:4173`.
 
-The Pages workflow builds on `main` and uploads **only `dist/`**. It requires GitHub Pages to be configured for **GitHub Actions** as the deployment source. The repository Pages URL is `https://pierreg99.github.io/AI-FOR-Everyone-Learn-Docs/`. A separate CI workflow validates pull requests and commits.
+The Pages workflow runs formatting, build, content, example, desktop/mobile browser and accessibility checks before publishing on `main` and uploads **only `dist/`**. It requires GitHub Pages to be configured for **GitHub Actions** as the deployment source. The repository Pages URL is `https://pierreg99.github.io/AI-FOR-Everyone-Learn-Docs/`. A separate CI workflow validates pull requests and commits.
+
+## Interface maintenance
+
+Run `npm run format` after editing frontend code. Both languages use `scripts/i18n.mjs`; keep paired labels there. Progress backups use an explicit schema and a 32 KiB limit. Imports validate all chapter IDs before merging, and never upload a file. Focus mode and the reading position indicator are optional enhancements.

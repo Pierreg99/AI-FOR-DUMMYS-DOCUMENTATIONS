@@ -12,3 +12,7 @@ Thank you for improving the guide. Please keep German and English editions synch
 If a source or standard can change, link to the official documentation or original paper and avoid unqualified version-specific claims. Prices in exercises must be labeled assumptions, not vendor quotes. Do not include API keys, customer data, or unnecessary personal information in examples. Preserve the reading experience without JavaScript.
 
 The website is generated into `dist/`, which is deliberately excluded from Git. Submit source files, not the generated output. Describe the reader-facing change and any test results in a pull request.
+
+## Frontend formatting
+
+Run `npm run format` after code changes and `npm run check` before committing. New UI strings belong in both editions of `scripts/i18n.mjs`. Browser tests must cover meaningful interaction changes on desktop and mobile.

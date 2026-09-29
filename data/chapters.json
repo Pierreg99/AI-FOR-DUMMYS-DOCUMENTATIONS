@@ -9,302 +9,210 @@
     "id": 2,
     "slug": "02-machine-learning",
     "track": 0,
-    "prerequisites": [
-      1
-    ]
+    "prerequisites": [1]
   },
   {
     "id": 3,
     "slug": "03-transformers-foundation-models",
     "track": 0,
-    "prerequisites": [
-      2
-    ]
+    "prerequisites": [2]
   },
   {
     "id": 4,
     "slug": "04-llms",
     "track": 0,
-    "prerequisites": [
-      3
-    ]
+    "prerequisites": [3]
   },
   {
     "id": 5,
     "slug": "05-generative-ai",
     "track": 0,
-    "prerequisites": [
-      1,
-      4
-    ]
+    "prerequisites": [1, 4]
   },
   {
     "id": 6,
     "slug": "06-rag",
     "track": 0,
-    "prerequisites": [
-      4
-    ]
+    "prerequisites": [4]
   },
   {
     "id": 7,
     "slug": "07-ai-agents",
     "track": 1,
-    "prerequisites": [
-      4
-    ]
+    "prerequisites": [4]
   },
   {
     "id": 8,
     "slug": "08-agentic-ai",
     "track": 1,
-    "prerequisites": [
-      7
-    ]
+    "prerequisites": [7]
   },
   {
     "id": 9,
     "slug": "09-memory-tools-context",
     "track": 1,
-    "prerequisites": [
-      6,
-      7
-    ]
+    "prerequisites": [6, 7]
   },
   {
     "id": 10,
     "slug": "10-multi-agent-systems",
     "track": 1,
-    "prerequisites": [
-      8,
-      9
-    ]
+    "prerequisites": [8, 9]
   },
   {
     "id": 11,
     "slug": "11-autonomy-evaluation",
     "track": 1,
-    "prerequisites": [
-      7
-    ]
+    "prerequisites": [7]
   },
   {
     "id": 12,
     "slug": "12-agi",
     "track": 1,
-    "prerequisites": [
-      1,
-      11
-    ]
+    "prerequisites": [1, 11]
   },
   {
     "id": 13,
     "slug": "13-asi",
     "track": 2,
-    "prerequisites": [
-      12
-    ]
+    "prerequisites": [12]
   },
   {
     "id": 14,
     "slug": "14-security-safety",
     "track": 2,
-    "prerequisites": [
-      7
-    ]
+    "prerequisites": [7]
   },
   {
     "id": 15,
     "slug": "15-architecture-patterns",
     "track": 2,
-    "prerequisites": [
-      8
-    ]
+    "prerequisites": [8]
   },
   {
     "id": 16,
     "slug": "16-formulas",
     "track": 2,
-    "prerequisites": [
-      4,
-      11
-    ]
+    "prerequisites": [4, 11]
   },
   {
     "id": 17,
     "slug": "17-practice-llm-to-runtime",
     "track": 2,
-    "prerequisites": [
-      9,
-      14,
-      15
-    ]
+    "prerequisites": [9, 14, 15]
   },
   {
     "id": 18,
     "slug": "18-roadmap-llm-agent-agi",
     "track": 2,
-    "prerequisites": [
-      12,
-      17
-    ]
+    "prerequisites": [12, 17]
   },
   {
     "id": 19,
     "slug": "19-observability",
     "track": 3,
-    "prerequisites": [
-      17
-    ]
+    "prerequisites": [17]
   },
   {
     "id": 20,
     "slug": "20-data-pipelines",
     "track": 3,
-    "prerequisites": [
-      6
-    ]
+    "prerequisites": [6]
   },
   {
     "id": 21,
     "slug": "21-inference-serving",
     "track": 3,
-    "prerequisites": [
-      4,
-      16
-    ]
+    "prerequisites": [4, 16]
   },
   {
     "id": 22,
     "slug": "22-human-ai-interaction",
     "track": 3,
-    "prerequisites": [
-      7,
-      14
-    ]
+    "prerequisites": [7, 14]
   },
   {
     "id": 23,
     "slug": "23-governance-risk",
     "track": 3,
-    "prerequisites": [
-      11,
-      14
-    ]
+    "prerequisites": [11, 14]
   },
   {
     "id": 24,
     "slug": "24-agent-testing",
     "track": 3,
-    "prerequisites": [
-      11,
-      17
-    ]
+    "prerequisites": [11, 17]
   },
   {
     "id": 25,
     "slug": "25-distributed-agent-runtime",
     "track": 4,
-    "prerequisites": [
-      17,
-      19
-    ]
+    "prerequisites": [17, 19]
   },
   {
     "id": 26,
     "slug": "26-durable-state-machines",
     "track": 4,
-    "prerequisites": [
-      25
-    ]
+    "prerequisites": [25]
   },
   {
     "id": 27,
     "slug": "27-tool-protocols-mcp",
     "track": 4,
-    "prerequisites": [
-      7,
-      14
-    ]
+    "prerequisites": [7, 14]
   },
   {
     "id": 28,
     "slug": "28-memory-retrieval-evaluation",
     "track": 4,
-    "prerequisites": [
-      6,
-      9
-    ]
+    "prerequisites": [6, 9]
   },
   {
     "id": 29,
     "slug": "29-context-engineering",
     "track": 4,
-    "prerequisites": [
-      9
-    ]
+    "prerequisites": [9]
   },
   {
     "id": 30,
     "slug": "30-tool-security",
     "track": 4,
-    "prerequisites": [
-      14,
-      27
-    ]
+    "prerequisites": [14, 27]
   },
   {
     "id": 31,
     "slug": "31-event-driven-orchestration",
     "track": 5,
-    "prerequisites": [
-      25,
-      26
-    ]
+    "prerequisites": [25, 26]
   },
   {
     "id": 32,
     "slug": "32-retrieval-optimization",
     "track": 5,
-    "prerequisites": [
-      6,
-      28
-    ]
+    "prerequisites": [6, 28]
   },
   {
     "id": 33,
     "slug": "33-multimodal-ai",
     "track": 5,
-    "prerequisites": [
-      3,
-      5
-    ]
+    "prerequisites": [3, 5]
   },
   {
     "id": 34,
     "slug": "34-evaluation-science",
     "track": 5,
-    "prerequisites": [
-      11
-    ]
+    "prerequisites": [11]
   },
   {
     "id": 35,
     "slug": "35-privacy-engineering",
     "track": 5,
-    "prerequisites": [
-      14,
-      20
-    ]
+    "prerequisites": [14, 20]
   },
   {
     "id": 36,
     "slug": "36-ai-product-engineering",
     "track": 5,
-    "prerequisites": [
-      16,
-      21,
-      34
-    ]
+    "prerequisites": [16, 21, 34]
   }
 ]
