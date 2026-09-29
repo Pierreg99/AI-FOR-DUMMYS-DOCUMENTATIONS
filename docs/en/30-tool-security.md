@@ -1,33 +1,46 @@
-# 30 — Tool Security & Capability Sandboxing
+# Tool security and capability sandboxing
 
-## Goal
-Tool-Sicherheit trennt Modellvorschlag, Policy-Entscheidung und technische Berechtigung.
+Give tools exactly the capabilities required for a task.
 
-## Architecture
-~~~text
-Agent → Policy Engine → Tool Gateway → Sandbox
-             ↓              ↓
-          Identity        Audit
-          Scope           Result
-          Risk
-          Approval
-~~~
+## Learning goal
 
-## Capability-Modell
-Eine Capability definiert mindestens Subject, Action, Resource, Scope und Expiration. Hochwirksame Side Effects benötigen zusätzliche Kontrolle.
+Design a tool contract with enforced boundaries. A capability describes a specific permitted action on particular resources. It should be narrower than unrestricted shell, database, or network access.
 
-## Side-effect classes
-Read-only · Reversible Write · External Write · Irreversible / High-Impact
+## Required checks
 
-## Controls
-Least Privilege · Egress Control · Secret Isolation · Schema Validation · Rate Limits · Replay Protection · Audit
+| Area | Example |
+| --- | --- |
+| Function | Read documents rather than run arbitrary commands |
+| Resource | An allowed project directory rather than the whole filesystem |
+| Arguments | Bounded file size and a valid identifier |
+| Runtime | Time, memory, and call budgets |
+| Effect | Reading, reversible editing, or publication |
 
-## Engineering rule
-Authorization gehört außerhalb des Sprachmodells.
+Enforce authorization in the executing service. A model-supplied `approved: true` field is not evidence of permission. Approval needs a trusted origin and must match the exact proposal.
 
-## Failure modes
-Manipulierte Tool-Metadaten · schädliche Tool-Antworten · überweite Scopes · Secret Leakage · unerwartete Seiteneffekte
+## Worked example
 
-## Dokumentationsstandard
+A tool may update documentation. Its service normalizes the path, checks the permitted directory, and accounts for symbolic links. It accepts only known text files and bounds the change. A path such as `../../private/config` does not become safe because the tool has a friendly description.
 
-Terms, architecture, assumptions, metrics, and failure modes are kept explicit. Uncertain or hypothetical claims are labeled as such.
+## Limits and failure modes
+
+Sandboxing reduces possible impact but does not replace business validation. Combinations of individually allowed tools can create new risks. Restrict outbound destinations too and prevent secrets from entering tool results.
+
+Tests should include invalid paths, oversized input, expired approval, and changed resource versions. Perform checks close to the actual action so changes between checking and use do not silently defeat them. Record rejected attempts without logging sensitive payloads unnecessarily.
+
+## Exercise
+
+A tool validates argument types but then uses an unchecked path in a shell command. Is schema validation sufficient?
+
+## Answer and self-check
+
+No. Type checking prevents neither path traversal nor command injection. Use narrow file APIs, validated resources, and no uncontrolled command concatenation.
+
+## Sources and further reading
+
+- [OWASP Top 10 for LLM Applications](https://owasp.org/projects/top-10-for-large-language-model-applications)
+- [Model Context Protocol — Architecture](https://modelcontextprotocol.io/docs/learn/architecture)
+
+## Keep learning
+
+[Previous: 29](29-context-engineering.md) · [Overview](README.md) · [Next: 31](31-event-driven-orchestration.md) · [Deutsch](../de/30-tool-security.md)

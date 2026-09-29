@@ -1,13 +1,5 @@
-# Kapitel 13 — ASI & Future Concepts
+# 13 — Kapitel verschoben
 
-## Artificial Superintelligence
-ASI ist das hypothetische Konzept einer allgemeinen Intelligenz, die menschliche Fähigkeiten deutlich übertrifft.
+[Deutsch](de/13-asi.md) · [English](en/13-asi.md)
 
-```text
-Narrow AI → AGI → ASI
-```
-
-Diese Kette beschreibt Fähigkeitskonzepte, keine bestätigte technische Roadmap.
-
-## Forschungsfragen
-Skalierung, Lernen, Robustheit, Alignment, Governance und Kontrollierbarkeit sind zentrale offene Themen.
+Die aktuelle Fassung enthält Beispiele, Übungen und Quellen.

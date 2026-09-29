@@ -1,285 +1,46 @@
-# AI for Dummies — Deutsche Dokumentation
-
-**Version:** V1.0  
-**Zweck:** Technische Einführung und Referenz zu moderner KI von Machine Learning bis zu agentischen Systemen, AGI und ASI.
-
-## 1. Lernmodell
-
-~~~text
-KI / AI
-├── Machine Learning
-│   └── Deep Learning
-│       └── Transformer
-│           ├── LLMs
-│           └── Multimodale Foundation Models
-└── Agentische Systeme
-    ├── Workflows
-    ├── Agents
-    └── Multi-Agent Systems
-
-AGI / ASI
-= Fähigkeits- und Zielkonzepte, keine einzelne Modellarchitektur
-~~~
-
-**Merksatz:** LLM = Modell · Agent = handelndes System · Agentic AI = Systemparadigma · AGI = allgemeine Fähigkeit · ASI = hypothetisches Superintelligenz-Konzept.
-
-## 2. Kapitelübersicht
-
-| Nr. | Thema | Kernfrage |
-|---|---|---|
-| 01 | AI Fundamentals | Was ist KI und wie wird sie systematisch beschrieben? |
-| 02 | Machine Learning | Wie lernen Modelle aus Daten? |
-| 03 | Transformers & Foundation Models | Warum sind Transformer ein zentraler Baustein moderner Foundation Models? |
-| 04 | LLMs | Wie verarbeiten und erzeugen Sprachmodelle Tokens? |
-| 05 | Generative AI | Wie entstehen Text, Bild, Audio, Video und Code? |
-| 06 | RAG & Knowledge Systems | Wie werden externe Wissensquellen in Generierung einbezogen? |
-| 07 | AI Agents | Wie wird ein Modell zu einem handelnden Softwaresystem? |
-| 08 | Agentic AI & Workflows | Wann ist ein Workflow geeigneter als ein autonomer Agent? |
-| 09 | Memory, Tools & Context Engineering | Wie werden Kontext, Werkzeuge und persistente Informationen verwaltet? |
-| 10 | Multi-Agent Systems | Wie arbeiten mehrere spezialisierte Agenten zusammen? |
-| 11 | Autonomy, Evaluation & Reliability | Wie werden Erfolg, Fehlerverhalten und Langzeitzuverlässigkeit gemessen? |
-| 12 | AGI | Was bedeutet allgemeine Intelligenz als Fähigkeitskonzept? |
-| 13 | ASI & Future Concepts | Welche Konzepte werden für hypothetische Superintelligenz diskutiert? |
-| 14 | Security & Safety | Wie werden Prompt Injection, Datenabfluss und Tool-Missbrauch begrenzt? |
-| 15 | Architecture Patterns | Welche wiederverwendbaren Systemarchitekturen existieren? |
-| 16 | Formulas & Quantitative Models | Welche einfachen Modelle helfen bei Kosten, Latenz und Reliability? |
-| 17 | LLM → Agent Runtime | Wie wird aus einem Modell ein produktionsfähiger Runtime-Stack? |
-| 18 | LLM → Agent → AGI Roadmap | Welche technischen Stufen lassen sich voneinander unterscheiden? |
-
-## 3. Zentrale Begriffe
-
-### Modell, Agent und Workflow
-
-Ein **Modell** berechnet Ausgaben aus Eingaben.  
-Ein **Agent** kombiniert ein Modell mit Zustandsverwaltung, Zielorientierung, Werkzeugen, Beobachtungen und Kontrolllogik.  
-Ein **Workflow** legt die Schritte stärker deterministisch fest.
-
-~~~text
-Goal
-  ↓
-Plan / Decide
-  ↓
-Tool Action
-  ↓
-Observation
-  ↓
-Verify
-  ├── success → finish
-  └── failure → replan / recover
-~~~
-
-### RAG
-
-Eine typische Retrieval-Augmented-Generation-Pipeline:
-
-~~~text
-Documents
-  → ingestion
-  → chunking
-  → embeddings/index
-  → retrieval
-  → reranking
-  → context assembly
-  → generation
-  → citation / validation
-~~~
-
-RAG ersetzt kein Modelltraining. Es ist eine Laufzeitstrategie, um relevante externe Informationen in einen Generationskontext einzubringen.
-
-### Memory
-
-- **Working memory:** kurzfristiger Kontext der laufenden Aufgabe.
-- **Episodic memory:** vergangene Ereignisse oder Ausführungen.
-- **Semantic memory:** abstrahiertes Wissen und Fakten.
-- **Long-term storage:** persistenter Speicher außerhalb des reinen Kontextfensters.
-
-**Wichtig:** Kontextfenster und persistentes Gedächtnis sind unterschiedliche Mechanismen.
-
-## 4. Agent- und Multi-Agent-Patterns
-
-### Single-Agent-Patterns
-
-- Tool calling
-- Planner / Executor
-- Generator / Critic
-- Router
-- Supervisor
-- Human-in-the-loop
-- Event-driven agent
-- Durable agent
-
-### Multi-Agent-Patterns
-
-**Sequential delegation**
-~~~text
-Agent A → Agent B → Agent C
-~~~
-
-**Fan-out / fan-in**
-~~~text
-            → Agent B →
-Agent A →                → Aggregator
-            → Agent C →
-~~~
-
-**Blackboard**
-~~~text
-Agent A ─┐
-Agent B ─┼→ Shared State / Blackboard
-Agent C ─┘
-~~~
-
-**Negotiation**
-~~~text
-Planner ↔ Specialist ↔ Critic ↔ Coordinator
-~~~
-
-## 5. Production Engineering
-
-Produktive Agentensysteme benötigen nicht nur Modellqualität, sondern auch:
-
-- idempotente Tools und Jobs
-- Timeouts und begrenzte Retries
-- Concurrency Control und Leases
-- klare Berechtigungsgrenzen
-- Secret Isolation
-- Audit-Logs
-- Tracing und Metriken
-- Recovery- und Resume-Mechanismen
-- Human Approval Gates für sensible Aktionen
-- Kill Switches und Rate Limits
-
-Ein Agent darf nicht mit unbegrenzten Rechten ausgestattet werden, nur weil sein zugrunde liegendes Modell leistungsfähig ist.
-
-## 6. Evaluation
-
-Relevante Metriken sind unter anderem:
-
-- Task Success Rate
-- Tool Correctness
-- Recovery Rate
-- Long-horizon Reliability
-- Latenz
-- Token- und Infrastrukturkosten
-- Human Intervention Rate
-- Safety Violations
-
-Für eine Kette unabhängiger Schritte mit Erfolgswahrscheinlichkeit p je Schritt ist ein einfaches Modell:
-
-P(alle Schritte erfolgreich) = p^N
-
-Das zeigt, warum zusätzliche Schritte die Zuverlässigkeit stark beeinflussen können.
-
-Weitere Grundmodelle:
-
-SuccessRate = successful tasks / total tasks
-
-TotalLatency = Summe aller Einzellatenzen
-
-ExpectedUtility = Value − Cost − Risk
-
-Diese Modelle sind Vereinfachungen für Engineering-Entscheidungen, keine vollständigen wissenschaftlichen Evaluationsmodelle.
-
-## 7. Security & Safety
-
-Wichtige Bedrohungen:
-
-- Prompt Injection
-- Tool Injection
-- Datenexfiltration
-- Privilege Escalation
-- Secret Leakage
-- Unkontrollierte Seiteneffekte
-- Unsichere externe Inhalte
-- Jailbreak-Versuche
-
-Grundprinzipien:
-
-~~~text
-Least Privilege
-+ Sandboxing
-+ Input / Output Validation
-+ Approval Gates
-+ Secret Isolation
-+ Auditability
-+ Monitoring
-~~~
-
-## 8. AGI und ASI korrekt einordnen
-
-**AGI** ist ein Fähigkeitskonzept: Ein System wäre über viele unterschiedliche Aufgaben hinweg allgemein leistungsfähig. Es ist nicht automatisch eine bestimmte Modellarchitektur.
-
-**ASI** bezeichnet hypothetische Systeme, deren allgemeine kognitive Fähigkeiten menschliche Leistungsgrenzen deutlich übertreffen würden. Technische Details dazu gehören teilweise in den Bereich offener Forschung und Zukunftsszenarien.
-
-Die Dokumentation trennt deshalb ausdrücklich:
-
-1. etablierte technische Grundlagen,
-2. beobachtete Engineering-Praktiken,
-3. offene Forschungsfragen,
-4. spekulative Zukunftskonzepte.
-
-## 9. Technische Entwicklungsstufen
-
-~~~text
-Foundation Model
-      ↓
-Tool-Augmented Model
-      ↓
-Single Agent
-      ↓
-Reliable Agent
-      ↓
-Long-Horizon Agent
-      ↓
-Multi-Agent Fabric
-      ↓
-Generality Research
-      ↓
-AGI Evaluation
-~~~
-
-Die Stufen sind ein Engineering-Modell zur Strukturierung von Systementwicklung, keine Behauptung über einen sicheren oder linearen Pfad zu AGI.
-
-## 10. Repository-Navigation
-
-Primäre Kapitel liegen unter docs/.
-
-- Glossar: ../glossary.md
-- Diagramme: ../diagrams.md
-- Formeln: ../16-formulas.md
-- Quellen: ../sources.md
-- Roadmap: ../../ROADMAP.md
-- English documentation: ../en/README.md
-
-## 11. Dokumentationsstandard
-
-Alle neuen Kapitel sollten:
-
-1. Begriffe definieren,
-2. Architektur oder Ablauf sichtbar machen,
-3. Annahmen markieren,
-4. Fakten von Hypothesen trennen,
-5. Metriken und Failure Modes benennen,
-6. technische Grenzen dokumentieren,
-7. Quellen oder Referenzen angeben.
-
-
-## 12. Erweiterung V1.1 — Production Systems
-
-| Nr. | Thema | Fokus |
-|---|---|---|
-| 19 | Observability & Tracing | Logs, Metrics, Traces und Datenschutz |
-| 20 | Data Pipelines & Knowledge Quality | Datenqualität, Provenienz und Drift |
-| 21 | Inference Serving & Runtime Economics | Serving, Latenz, Throughput und Kosten |
-| 22 | Human-AI Interaction | Approval Gates und Kontrollstufen |
-| 23 | Governance, Risk & Lifecycle | Risiko, Change Management und Incidents |
-| 24 | Agent Testing & Verification | Unit-, Contract-, Scenario- und Reliability-Tests |
-
-Die sechs Erweiterungskapitel führen die V1.0 von der konzeptionellen Grundlage in Richtung produktionsnaher Systementwicklung.
-
-
-## V1.2 — Deutsche Fachedition
-
-[INDEX-V1.2 öffnen](INDEX-V1.2.md)
-
-Die Advanced-System-Kapitel 25–36 werden zusätzlich sprachrein unter `docs/de/` gepflegt.
+# AI for Everyone — Deutsche Dokumentation
+
+36 Kapitel mit Beispielen, Übungen und Lösungen. Wähle einen Lernpfad oder ein einzelnes Thema.
+
+[Deutsch](../de/README.md) · [English](../en/README.md)
+
+[Schnellstart](getting-started.md) · [Glossar](glossary.md) · [Quellen](sources.md) · [Praxisprojekte](projects.md)
+
+| # | Kapitel | Vorwissen |
+| --- | --- | --- |
+| 01 | [KI-Grundlagen](01-ai-fundamentals.md) | — |
+| 02 | [Machine Learning und Deep Learning](02-machine-learning.md) | 01 |
+| 03 | [Transformer und Foundation Models](03-transformers-foundation-models.md) | 02 |
+| 04 | [Große Sprachmodelle](04-llms.md) | 03 |
+| 05 | [Generative KI](05-generative-ai.md) | 01, 04 |
+| 06 | [RAG und Wissenssysteme](06-rag.md) | 04 |
+| 07 | [KI-Agenten](07-ai-agents.md) | 04 |
+| 08 | [Agentische KI und Workflows](08-agentic-ai.md) | 07 |
+| 09 | [Gedächtnis, Werkzeuge und Kontext](09-memory-tools-context.md) | 06, 07 |
+| 10 | [Multi-Agent-Systeme](10-multi-agent-systems.md) | 08, 09 |
+| 11 | [Autonomie, Evaluation und Zuverlässigkeit](11-autonomy-evaluation.md) | 07 |
+| 12 | [Allgemeine künstliche Intelligenz](12-agi.md) | 01, 11 |
+| 13 | [ASI und Zukunftskonzepte](13-asi.md) | 12 |
+| 14 | [Sicherheit und Schutzmaßnahmen](14-security-safety.md) | 07 |
+| 15 | [Architektur-Patterns](15-architecture-patterns.md) | 08 |
+| 16 | [Formeln und quantitative Modelle](16-formulas.md) | 04, 11 |
+| 17 | [Vom Sprachmodell zur Agenten-Laufzeit](17-practice-llm-to-runtime.md) | 09, 14, 15 |
+| 18 | [Entwicklungsstufen und Forschungsgrenzen](18-roadmap-llm-agent-agi.md) | 12, 17 |
+| 19 | [Beobachtbarkeit und Tracing](19-observability.md) | 17 |
+| 20 | [Datenpipelines und Wissensqualität](20-data-pipelines.md) | 06 |
+| 21 | [Inferenzbetrieb und Laufzeitkosten](21-inference-serving.md) | 04, 16 |
+| 22 | [Menschliche Kontrolle und Freigaben](22-human-ai-interaction.md) | 07, 14 |
+| 23 | [Governance, Risiko und Lebenszyklus](23-governance-risk.md) | 11, 14 |
+| 24 | [Agententests und Verifikation](24-agent-testing.md) | 11, 17 |
+| 25 | [Verteilte Agenten-Laufzeiten](25-distributed-agent-runtime.md) | 17, 19 |
+| 26 | [Dauerhafte Zustandsautomaten und Recovery](26-durable-state-machines.md) | 25 |
+| 27 | [Tool-Protokolle und MCP](27-tool-protocols-mcp.md) | 07, 14 |
+| 28 | [Gedächtnis und Retrieval-Evaluation](28-memory-retrieval-evaluation.md) | 06, 09 |
+| 29 | [Kontextgestaltung und Prompt-Architektur](29-context-engineering.md) | 09 |
+| 30 | [Tool-Sicherheit und Capability-Sandboxing](30-tool-security.md) | 14, 27 |
+| 31 | [Ereignisgesteuerte Orchestrierung](31-event-driven-orchestration.md) | 25, 26 |
+| 32 | [Retrieval-Optimierung und Suchqualität](32-retrieval-optimization.md) | 06, 28 |
+| 33 | [Multimodale KI-Systeme](33-multimodal-ai.md) | 03, 05 |
+| 34 | [Evaluation und statistisches Denken](34-evaluation-science.md) | 11 |
+| 35 | [Privacy Engineering und Datenschutz](35-privacy-engineering.md) | 14, 20 |
+| 36 | [KI-Produktentwicklung und Wirtschaftlichkeit](36-ai-product-engineering.md) | 16, 21, 34 |

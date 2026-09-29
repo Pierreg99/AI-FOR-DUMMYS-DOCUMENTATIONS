@@ -1,23 +1,5 @@
-28 — Memory Systems & Retrieval Evaluation
+# 28 — Chapter moved
 
-## Memory pipeline
-```text
-Event → Filter → Normalize → Store → Retrieve → Rerank → Use → Feedback
-```
+[Deutsch](docs/de/28-memory-retrieval-evaluation.md) · [English](docs/en/28-memory-retrieval-evaluation.md)
 
-## Memory quality
-Memory should be relevant, current, authorized, and traceable rather than merely large.
-
-## Evaluation dimensions
-- retrieval recall
-- precision / relevance
-- freshness
-- duplication rate
-- unauthorized retrieval rate
-- answer grounding
-
-## Forgetting
-Persistence needs deletion rules, TTLs, or retention policies. Older information is not automatically more valuable.
-
-## Engineering rule
-Context size is not a substitute for good retrieval and storage policy.
+The current edition includes examples, exercises, and sources.

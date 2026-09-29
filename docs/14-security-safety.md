@@ -1,32 +1,5 @@
-# Kapitel 14 — Security & Safety
+# 14 — Kapitel verschoben
 
-## Zentrale Risiken
-- Halluzinationen
-- Prompt Injection
-- Datenabfluss
-- Tool-Missbrauch
-- Jailbreaks
-- Kontextmanipulation
+[Deutsch](de/14-security-safety.md) · [English](en/14-security-safety.md)
 
-## Agenten-Risikokette
-```text
-Bad assumption → Bad tool call → Real side effect
-```
-
-## Defense in Depth
-```text
-Policy
- ↓
-Least-privilege tools
- ↓
-Sandbox
- ↓
-Approval gates
- ↓
-Secrets isolation
- ↓
-Audit / Monitoring
-```
-
-## Referenz
-- Anthropic, Trustworthy Agents: https://www.anthropic.com/research/trustworthy-agents
+Die aktuelle Fassung enthält Beispiele, Übungen und Quellen.

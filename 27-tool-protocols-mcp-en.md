@@ -1,27 +1,5 @@
-27 — Tool Protocols, MCP & Interface Contracts
+# 27 — Chapter moved
 
-## Goal
-Tool calls should use explicit, versioned contracts rather than assumptions made by the model.
+[Deutsch](docs/de/27-tool-protocols-mcp.md) · [English](docs/en/27-tool-protocols-mcp.md)
 
-## Contract
-```text
-Tool
-├── name
-├── version
-├── input schema
-├── output schema
-├── auth scope
-├── timeout
-└── side-effect class
-```
-
-## Side-effect classes
-- read-only
-- reversible write
-- irreversible or high-impact action
-
-## Security
-Tool metadata is untrusted input. The model must not be the sole authorization authority; policy enforcement belongs outside the model.
-
-## Compatibility
-Schema versions, error codes, and deprecation windows help runtimes evolve independently of individual tool implementations.
+The current edition includes examples, exercises, and sources.

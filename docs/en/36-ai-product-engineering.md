@@ -1,33 +1,46 @@
-# 36 — AI Product Engineering, Capacity Planning & Unit Economics
+# AI product engineering and unit economics
 
-## Goal
-Productionsreife KI verbindet Qualität, Reliability, Latenz, Kapazität, Kosten und menschlichen Aufwand.
+Connect user outcomes, quality, capacity, and cost into a testable product decision.
 
-## Kostenmodell
-~~~text
-Total Cost
-= Model + Retrieval + Tools + Compute
-+ Storage + Observability + Human Review
-~~~
+## Learning goal
 
-## Capacity
-Request Rate · Concurrency · Tokens/Request · Model Latency · Batch Size · Cache Hit Rate · Peak Traffic
+Evaluate an AI feature through the user problem it solves. An impressive demo does not establish sustainable operation. What matters is repeatedly useful outcomes at an acceptable total cost.
 
-## Optimization levers
-Routing · Caching · Batching · Context Reduction · Retrieval Optimization · Async Execution · Specialized Models · Scheduling
+## A more complete cost model
 
-## Core metric
-~~~text
-Cost per successful task
-= Total cost / Successful tasks
-~~~
+| Cost category | Examples |
+| --- | --- |
+| Model | Input, output, and retries |
+| Data and tools | Search, APIs, and updates |
+| Infrastructure | Compute, storage, and networking |
+| Operations | Monitoring, support, and incidents |
+| Human effort | Review, correction, and exceptions |
 
-## Failure modes
-Unbounded Retries · Context Bloat · Costly Routing · Noisy Telemetry · Underprovisioning · Idle Overprovisioning
+Measure cost per successfully completed task. Define success with users, such as a correctly resolved request rather than merely a generated answer.
 
-## Engineering rule
-Production bedeutet, dass Verhalten, Reliability, Capacity und Cost gemeinsam messbar und steuerbar sind.
+## Worked numerical example
 
-## Dokumentationsstandard
+100 tasks incur 20 euros of system cost and 30 euros of review effort. 80 tasks pass acceptance. Total cost per success is `50 / 80 = 0.625 euros`. A model with lower token prices can still be more expensive if more answers require correction.
 
-Terms, architecture, assumptions, metrics, and failure modes are kept explicit. Uncertain or hypothetical claims are labeled as such.
+## Limits and failure modes
+
+Average traffic is insufficient for capacity planning. Include spikes, long inputs, and failures of external services. Caching, routing, and smaller models are possible optimizations whose quality must be checked separately.
+
+A local pilot needs different operational decisions from a public service. Define owners, quality goals, spending budgets, fallback options, and shutdown criteria. Keep the manual process as a baseline rather than comparing only two AI variants. Track adoption and completed user goals so a cheaper feature nobody can use is not counted as a success.
+
+## Exercise
+
+A new version halves model costs but doubles human review effort. Is it more economical?
+
+## Answer and self-check
+
+Only total cost and success rate can answer that. Add model, operational, and human effort and compare the same tasks. Also consider completion time and the consequences of failures.
+
+## Sources and further reading
+
+- [AI Risk Management Framework — NIST](https://www.nist.gov/itl/ai-risk-management-framework)
+- [OpenTelemetry — Signals](https://opentelemetry.io/docs/concepts/signals/)
+
+## Keep learning
+
+[Previous: 35](35-privacy-engineering.md) · [Overview](README.md) · [Deutsch](../de/36-ai-product-engineering.md)
